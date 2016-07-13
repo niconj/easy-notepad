@@ -1,0 +1,22 @@
+<div id="note-container">
+    <div class="note title-container row">
+        <input class="title col-xs-8" type="text" name="selectionTitle" placeholder="Title" 
+        ng-model="selection.note.title" 
+        ng-readonly="readOnly.title"
+        ng-dblclick="readOnly.title = !readOnly.title"
+        ng-change="modified()">
+        <button class="en-btn col-xs-4" 
+        ng-if="!readOnly.title" 
+        ng-click="readOnly.title = true">DONE</button>
+    </div>
+    <div class="note content-container row">
+        <textarea class="content col-xs-12" placeholder="Content" 
+        ng-model="selection.note.content" 
+        ng-readonly="readOnly.content"
+        ng-change="modified()"></textarea>
+        <button class="en-btn" 
+        ng-click="readOnly.content = !readOnly.content">{{readOnly.content? 'EDIT' : 'VIEW'}}</button>
+        <button class="en-btn pull-right"  
+        ng-click="selection.note = null">BACK</button>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.en-btn {
+    font-size: 20px;
+    color: $water-green-color;
+    background: none;
+    border: none;
+
+    &.bordered {
+        border: 2px solid $water-green-color;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
