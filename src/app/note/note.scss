@@ -1,0 +1,50 @@
+#note-container {
+    height: 100%;
+    padding: 50px;
+    font-family: monospace;
+    height: 100%;
+
+    .note {
+        font-size: 20px;
+        color: $very-light-grey-color;
+        display: inline-block;
+
+        &.title-container {
+            height: 15%;
+            margin-bottom: 25px;
+        }
+        &.content-container {
+            height: 85%;
+            textarea.content {
+                height: calc(100% - 30px);
+            }
+            .btns-wrapper {
+                /* todo: make a mixin */
+                -webkit-user-select: none; //Chrome/Safari
+                -moz-user-select: none; // Firefox
+                -ms-user-select: none; // IE10+
+                -o-user-select: none;
+                user-select: none;
+                height: 30px;
+                .en-btn {
+                    padding-left: 15px; /* to equal bootstrap column */
+                }
+            }
+        }
+    }
+
+    .title-container, 
+    .content-container {
+        display: block;
+    }
+
+    .title, 
+    .content {
+        background: none;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
