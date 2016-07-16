@@ -12,16 +12,22 @@ export function EnAllNotes() {
 }
 
 class EnAllNotesController {
-  constructor ($scope, NotesManager, SelectionService) {
+  constructor ($scope, NotesManager, SelectionService, $location) {
     'ngInject';
     
     function init() {
         $scope.notes = NotesManager.getSavedNotes();
     }
 
-    $scope.createNote = () => NotesManager.newNote();
+    $scope.createNote = () => {
+      NotesManager.newNote();
+      $location.path('note');
+    }
 
-    $scope.select = note => SelectionService.note = note;
+    $scope.select = note => {
+      SelectionService.note = note;
+      $location.path('note');
+    }
 
     $scope.delete = note => {
       NotesManager.deleteNote(note);

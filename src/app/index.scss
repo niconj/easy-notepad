@@ -14,8 +14,10 @@
 @import "common_styles/colors";
 @import "common_styles/buttons";
 
-html, body, #indexed-view {
+html, body, #view {
     height: 100%;
+    margin:0;
+    padding:0;
     background-color: $grey-color;
 }
 

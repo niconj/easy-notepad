@@ -1,11 +1,14 @@
 .en-btn {
-    font-size: 20px;
-    color: $water-green-color;
+    color: $very-light-grey-color;
     background: none;
     border: none;
 
     &.bordered {
-        border: 2px solid $water-green-color;
+        border: 2px solid $very-light-grey-color;
+    }
+
+    &.circle {
+        border-radius: 50%;
     }
 
     &:focus {

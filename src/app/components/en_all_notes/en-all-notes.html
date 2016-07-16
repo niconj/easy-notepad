@@ -1,23 +1,21 @@
-<div id="all-notes-container">
-    <div class="row" 
+<div id="all-notes-container" class="container">
+    <div class="row text-center en-btn" 
     ng-if="!notes.length">
         <h3 class="col-xs-12">You have no notes yet</h3>
     </div>
     <div class="row"  
     ng-if="notes.length">
-        <div class="col-xs-12 text-center" 
-        ng-repeat="note in notes">
-            <button class="en-btn" 
+        <div class="note-title-container col-xs-12 text-center" 
+        ng-repeat="note in notes track by $index">
+            <button class="note-delete en-btn bordered circle pull-left" 
+            ng-click="delete(note)"><span>X</span></button>
+            <button class="note-select en-btn" 
             ng-click="select(note)" 
             ng-bind="note.title || 'Untitled'"></button>
-            <button class="en-btn" 
-            ng-click="delete(note)">[X]</button>
         </div>
     </div>
-    <div class="row text-center">
-        <div class="col-xs-12">
-            <button class="en-btn bordered" 
-            ng-click="createNote()">Create note</button>
-        </div>
+    <div class="add-note-container">
+        <button class="add-note en-btn" 
+        ng-click="createNote()"><span>+</span></button>
     </div>
 </div>

@@ -6,6 +6,8 @@ export class NotesManager {
 
     var reorder = notes => notes.forEach((note, index) => note.id = index);
 
+    this.numberOfUntitledNotes = () => this.getSavedNotes().filter(nt => !nt.title).length;
+
     this.getSavedNotes = () => angular.fromJson(ls.getItem('notes')) || [];
 
     this.saveNote = note => {
@@ -28,6 +30,8 @@ export class NotesManager {
             content: ''
         }
     }
+
+    this.isEmpty = note => !note.title && !note.content;
     
   }
 }

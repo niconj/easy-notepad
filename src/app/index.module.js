@@ -2,11 +2,12 @@ import { config } from './index.config';
 import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
+import { NoteController } from './note/note.controller';
 
 //directives
 import { EnStatusBar } from '../app/components/en_status_bar/en.status.bar';
 import { EnAllNotes } from '../app/components/en_all_notes/en.all.notes';
-import { EnNote } from '../app/components/en_note/en.note';
+import { LongPress } from '../app/components/common/long.press';
 
 //services
 import { SelectionService } from '../app/shared/selection.service';
@@ -25,10 +26,11 @@ angular.module('easynotepad', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize'
 
   // controllers
   .controller('MainController', MainController)
+  .controller('NoteController', NoteController)
 
   // directives
   .directive('enStatusBar', EnStatusBar)
   .directive('enAllNotes', EnAllNotes)
-  .directive('enNote', EnNote)
+  .directive('longPress', LongPress)
 
   // resources

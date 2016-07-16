@@ -6,6 +6,11 @@ export function routerConfig ($routeProvider) {
       controller: 'MainController',
       controllerAs: 'main'
     })
+    .when('/note', {
+      templateUrl: 'app/note/note.html',
+      controller: 'NoteController',
+      controllerAs: 'note'
+    })
     .otherwise({
       redirectTo: '/'
     });

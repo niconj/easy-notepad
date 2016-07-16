@@ -3,6 +3,8 @@ export class SelectionService {
     'ngInject';
 
     this.note = null;
+
+    this.releaseNote = () => this.note = null;
     
   }
 }
