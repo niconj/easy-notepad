@@ -1,4 +1,10 @@
+$bottom-bar-size: 50px;
+$delete-icon-size: 20px;
+$bottom-icon-size: 35px;
+
 #all-notes-container {
+    padding-top: 15px;
+    height: 100%;
     /* todo: make a mixin */
     -webkit-user-select: none; //Chrome/Safari
     -moz-user-select: none; // Firefox
@@ -8,34 +14,53 @@
     font-family: monospace;
 
     .note-title-container {
+        display: flex;
+        height: calc(100% - $bottom-bar-size);
         button.note-select {
+            text-align: left;
+            margin-left: 20px;
             font-size: 30px;
+            max-width: 100%;
+            word-break: break-all;
+            overflow-wrap: break-word;
         }
         button.note-delete {
-            width: 25px;
-            height: 25px;
-            position: absolute;
-            left: 25px;
-            transform: translate(50%, 45%);
+            align-items: stretch;
+            margin-left: 15px;
+            i {
+                font-size: $delete-icon-size;
+                /* icon is not perfectly centered so I need this little offset */
+                position: absolute;
+                transform: translate(-50%, -40%);
+            }
         }
     }
 
     .add-note-container {
-        position: fixed;
-        display: inline-block;
-        bottom: 10px;
-        right: 10px;
-
+        height: $bottom-bar-size;
+        bottom: 0px;
+        left: 0px; 
+        right: 0px;
+        position: absolute;
         button.add-note {
-            font-weight: bold;
-            font-size: 45px;
-            width: 50px;
-            height: 50px;
-
-            span {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            i {
+                font-size: $bottom-icon-size;
                 position: absolute;
-                transform: translate(-44%, -54%);
+                transform: translate(-50%, -40%);
             }
-        } 
+        }
+        button.invert-colors {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            i {
+                font-size: $bottom-icon-size;
+                position: absolute;
+                transform: translate(-50%, -40%);
+            }
+        }
     }
 }

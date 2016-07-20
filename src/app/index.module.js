@@ -7,11 +7,12 @@ import { NoteController } from './note/note.controller';
 //directives
 import { EnStatusBar } from '../app/components/en_status_bar/en.status.bar';
 import { EnAllNotes } from '../app/components/en_all_notes/en.all.notes';
-import { LongPress } from '../app/components/common/long.press';
+import { ThemeBackground } from '../app/components/theme_background/theme.background';
 
 //services
 import { SelectionService } from '../app/shared/selection.service';
 import { NotesManager } from '../app/shared/notes.manager';
+import { ThemeManager } from '../app/shared/theme.manager';
 
 // .component('nameToUse', importedName)
 
@@ -23,6 +24,7 @@ angular.module('easynotepad', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize'
   // services
   .service('SelectionService', SelectionService)
   .service('NotesManager', NotesManager)
+  .service('ThemeManager', ThemeManager)
 
   // controllers
   .controller('MainController', MainController)
@@ -31,6 +33,6 @@ angular.module('easynotepad', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize'
   // directives
   .directive('enStatusBar', EnStatusBar)
   .directive('enAllNotes', EnAllNotes)
-  .directive('longPress', LongPress)
+  .directive('themeBackground', ThemeBackground)
 
   // resources

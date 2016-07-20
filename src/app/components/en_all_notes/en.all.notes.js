@@ -12,12 +12,10 @@ export function EnAllNotes() {
 }
 
 class EnAllNotesController {
-  constructor ($scope, NotesManager, SelectionService, $location) {
+  constructor ($scope, NotesManager, SelectionService, $location, ThemeManager) {
     'ngInject';
-    
-    function init() {
-        $scope.notes = NotesManager.getSavedNotes();
-    }
+
+    init();
 
     $scope.createNote = () => {
       NotesManager.newNote();
@@ -34,9 +32,11 @@ class EnAllNotesController {
       $scope.notes = NotesManager.getSavedNotes(); //maybe send to a service and update constantly
     }
 
-    
-
-    init();
+    function init() {
+        $scope.notes = NotesManager.getSavedNotes();
+        $scope.componentColor = ThemeManager.componentColor;
+        $scope.invertColors = ThemeManager.toggle;
+    }
 
   }
 }

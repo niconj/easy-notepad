@@ -1,21 +1,21 @@
 <div id="all-notes-container" class="container">
-    <div class="row text-center en-btn" 
-    ng-if="!notes.length">
-        <h3 class="col-xs-12">You have no notes yet</h3>
+    <div class="row text-center en-btn" ng-if="!notes.length">
+        <h3 class="col-xs-12" ng-class="componentColor()">You have no notes yet</h3>
     </div>
-    <div class="row"  
-    ng-if="notes.length">
-        <div class="note-title-container col-xs-12 text-center" 
-        ng-repeat="note in notes track by $index">
-            <button class="note-delete en-btn bordered circle pull-left" 
-            ng-click="delete(note)"><span>X</span></button>
-            <button class="note-select en-btn" 
-            ng-click="select(note)" 
+    <div class="row" ng-if="notes.length">
+        <div class="note-title-container col-xs-12" ng-repeat="note in notes">
+            <button class="note-delete en-btn pull-left" 
+            ng-class="componentColor()" 
+            ng-click="delete(note)"><i class="fi-x"></i></button>
+            <button class="note-select en-btn" ng-click="select(note)" 
+            ng-class="componentColor()" 
             ng-bind="note.title || 'Untitled'"></button>
         </div>
     </div>
     <div class="add-note-container">
         <button class="add-note en-btn" 
-        ng-click="createNote()"><span>+</span></button>
+        ng-click="createNote()" ng-class="componentColor()"><i class="fi-plus"></i></button>
+        <button class="invert-colors en-btn" 
+        ng-click="invertColors()" ng-class="componentColor()"><i class="fi-paint-bucket"></i></button>
     </div>
 </div>
