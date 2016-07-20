@@ -1,38 +1,33 @@
 <div id="note-container" class="container">
     <div class="note-title-container row">
-        <input class="title col-xs-10" type="text" name="selectionTitle" placeholder="Title" maxlength="20" 
+        <!-- title -->
+        <input class="title col-xs-12" type="text" name="selectionTitle" placeholder="Title"  
         ng-model="selection.note.title" 
-        ng-readonly="readOnly.title"
-        ng-dblclick="readOnly.title = !readOnly.title"
+        ng-readonly="readOnly"
         ng-change="modified()">
-        <button class="edit-btn en-btn col-xs-2" 
-        ng-class="componentColor()" 
-        ng-click="readOnly.title = !readOnly.title">
-            <i ng-if="!readOnly.title" class="fi-unlock"></i>
-            <i ng-if="readOnly.title" class="fi-lock"></i>
-        </button>
     </div>
     <div class="note-content-container row">
-        <textarea class="content col-xs-12" placeholder="Content" 
+        <!-- content -->
+        <textarea class="content col-xs-12" placeholder="Content" autofocus 
         ng-class="componentColor()" 
         ng-model="selection.note.content" 
-        ng-readonly="readOnly.content"
+        ng-readonly="readOnly"
         ng-change="modified()"></textarea>
-        <div class="btns-wrapper col-xs-12">
+        <div class="btns-wrapper col-xs-12 text-center">
+            <!-- back -->
             <button class="en-btn pull-left" 
             ng-class="componentColor()" 
             ng-click="back()"><i class="fi-arrow-left"></i></button>
+            <!-- share -->
+            <button class="en-btn" 
+            ng-class="componentColor()" 
+            ng-click="share()"><i class="fi-share"></i></button>
+            <!-- edit/view -->
             <button class="en-btn pull-right" 
             ng-class="componentColor()" 
-            ng-click="readOnly.content = !readOnly.content">
-                <div class="edit-view-container" ng-if="readOnly.content">
-                    <span>Edit mode</span>
-                    <i class="fi-pencil"></i>
-                </div>
-                <div class="edit-view-container" ng-if="!readOnly.content">
-                    <span>View mode</span>
-                    <i class="fi-eye"></i>
-                </div>
+            ng-click="readOnly = !readOnly">
+                <i class="fi-pencil" ng-if="readOnly"></i>
+                <i class="fi-eye" ng-if="!readOnly"></i>
             </button>
         </div>
     </div>

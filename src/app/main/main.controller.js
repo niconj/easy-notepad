@@ -4,7 +4,6 @@ export class MainController {
     'ngInject';
 
     $scope.selection = SelectionService;
-
     
   }
 }
