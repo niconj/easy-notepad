@@ -1,9 +1,10 @@
 $bottom-bar-size: 50px;
 $delete-icon-size: 20px;
 $bottom-icon-size: 35px;
+$font-size: 20px;
 
 #all-notes-container {
-    padding-top: 15px;
+    padding-top: 10px;
     height: 100%;
     /* todo: make a mixin */
     -webkit-user-select: none; //Chrome/Safari
@@ -13,28 +14,33 @@ $bottom-icon-size: 35px;
     user-select: none;
     font-family: monospace;
 
-    .note-title-container {
-        display: flex;
-        height: calc(100% - $bottom-bar-size);
-        button.note-select {
-            text-align: left;
-            margin-left: 20px;
-            font-size: 30px;
-            max-width: 100%;
-            word-break: break-all;
-            overflow-wrap: break-word;
-        }
-        button.note-delete {
-            align-items: stretch;
-            margin-left: 15px;
-            i {
-                font-size: $delete-icon-size;
-                /* icon is not perfectly centered so I need this little offset */
-                position: absolute;
-                transform: translate(-50%, -40%);
+    .all-notes {
+        height: calc(100% - #{$bottom-bar-size});
+        overflow: auto;
+        .note-container {
+            min-height: 50px;
+            display: flex;
+            button.note-select {
+                text-align: left;
+                margin-left: 20px;
+                font-size: $font-size;
+                max-width: 100%;
+                word-break: break-all;
+                overflow-wrap: break-word;
             }
-        }
+            button.note-delete {
+                align-items: stretch;
+                width: 15px;
+                i {
+                    font-size: $delete-icon-size;
+                    /* icon is not perfectly centered so I need this little offset */
+                    position: absolute;
+                    transform: translate(-50%, -40%);
+                }
+            }
+        } 
     }
+
 
     .add-note-container {
         height: $bottom-bar-size;
@@ -42,24 +48,15 @@ $bottom-icon-size: 35px;
         left: 0px; 
         right: 0px;
         position: absolute;
+        padding: 0px 15px;
         button.add-note {
-            position: absolute;
-            bottom: 25px;
-            right: 25px;
             i {
                 font-size: $bottom-icon-size;
-                position: absolute;
-                transform: translate(-50%, -40%);
             }
         }
         button.invert-colors {
-            position: absolute;
-            bottom: 25px;
-            left: 25px;
             i {
                 font-size: $bottom-icon-size;
-                position: absolute;
-                transform: translate(-50%, -40%);
             }
         }
     }

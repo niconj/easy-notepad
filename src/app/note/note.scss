@@ -1,48 +1,72 @@
+$icon-size: 30px;
+$bottom-bar-size: 50px;
+$font-size: 16px;
+$title-size: 25px;
+$icont-text-size: ($icon-size / 2px) + 0px;
+
 #note-container {
     height: 100%;
-    padding: 50px;
+    padding: 15px 15px 0px 15px;
     font-family: monospace;
     height: 100%;
 
-    .note {
-        font-size: 20px;
-        color: $very-light-grey-color;
-        display: inline-block;
-
-        &.title-container {
-            height: 15%;
-            margin-bottom: 25px;
+    .note-title-container {
+        height: 10%;
+        display: flex;
+        .title {
+            color: $water-green-color;
+            font-weight: bold;
+            text-align: center;
+            font-size: $title-size;
         }
-        &.content-container {
-            height: 85%;
-            textarea.content {
-                height: calc(100% - 30px);
-            }
-            .btns-wrapper {
-                /* todo: make a mixin */
-                -webkit-user-select: none; //Chrome/Safari
-                -moz-user-select: none; // Firefox
-                -ms-user-select: none; // IE10+
-                -o-user-select: none;
-                user-select: none;
-                height: 30px;
-                .en-btn {
-                    padding-left: 15px; /* to equal bootstrap column */
+        .edit-btn {
+            font-size: $icon-size;
+        }
+    }
+    .note-content-container {
+        height: 90%;
+        textarea.content {
+            height: calc(100% - #{$bottom-bar-size});
+        }
+        .btns-wrapper {
+            /* todo: make a mixin */
+            -webkit-user-select: none; //Chrome/Safari
+            -moz-user-select: none; // Firefox
+            -ms-user-select: none; // IE10+
+            -o-user-select: none;
+            user-select: none;
+            display: flex;
+            height: $bottom-bar-size;
+            .en-btn {
+                align-items: stretch;
+                i {
+                    height: 100%;
+                    font-size: $icon-size;
+                }
+                .edit-view-container {
+                    display: table;
+                    span {
+                        font-size: $icont-text-size;
+                        display: table-cell;
+                        vertical-align: middle;
+                        padding-right: 10px;
+                    }
+                }
+                &.pull-left {
+                    margin-right: auto;
+                }
+                &.pull-right {
+                    margin-left: auto;
                 }
             }
         }
-    }
-
-    .title-container, 
-    .content-container {
-        display: block;
     }
 
     .title, 
     .content {
         background: none;
         border: none;
-
+        font-size: $font-size;
         &:focus {
             outline: none;
         }

@@ -2,8 +2,8 @@
     <div class="row text-center en-btn" ng-if="!notes.length">
         <h3 class="col-xs-12" ng-class="componentColor()">You have no notes yet</h3>
     </div>
-    <div class="row" ng-if="notes.length">
-        <div class="note-title-container col-xs-12" ng-repeat="note in notes">
+    <div class="all-notes row" ng-if="notes.length">
+        <div class="note-container col-xs-12" ng-repeat="note in notes">
             <button class="note-delete en-btn pull-left" 
             ng-class="componentColor()" 
             ng-click="delete(note)"><i class="fi-x"></i></button>
@@ -13,9 +13,9 @@
         </div>
     </div>
     <div class="add-note-container">
-        <button class="add-note en-btn" 
-        ng-click="createNote()" ng-class="componentColor()"><i class="fi-plus"></i></button>
-        <button class="invert-colors en-btn" 
+        <button class="invert-colors en-btn pull-left" 
         ng-click="invertColors()" ng-class="componentColor()"><i class="fi-paint-bucket"></i></button>
+        <button class="add-note en-btn pull-right" 
+        ng-click="createNote()" ng-class="componentColor()"><i class="fi-plus"></i></button>
     </div>
 </div>
