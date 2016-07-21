@@ -17,7 +17,8 @@
         ng-model="selection.note.content" 
         ng-readonly="readOnly" 
         ng-change="modified()"></textarea>
-        <div class="btns-wrapper col-xs-12 text-center">
+        <div class="btns-wrapper col-xs-12 text-center"
+        ng-if="displayButtons()">
             <!-- back -->
             <button class="en-btn pull-left" 
             ng-class="componentColor()" 

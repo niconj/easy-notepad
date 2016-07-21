@@ -10,10 +10,14 @@ export class NoteController {
 
         init();
 
+        /* refactor to directive */
+        $scope.displayButtons = () => $window.innerHeight > 300;
+
         $scope.modified = () => {
             /* should add an application values service for these */
             let note = SelectionService.note.title;
-            SelectionService.note.title = note? SelectionService.note.title.slice(0, 19) : note; // fix for android maxlength
+            /* fix for android maxlength */
+            SelectionService.note.title = note? SelectionService.note.title.slice(0, 19) : note;
             NotesManager.saveNote(SelectionService.note);
         }
 
@@ -28,7 +32,8 @@ export class NoteController {
             if(!$window.plugins || !$window.plugins.socialsharing) return;
             let note = SelectionService.note;
             let social = $window.plugins.socialsharing;
-            social.share(note.content, note.title, null /*files*/, null /*url*/, 'Choose an app to share your note');
+            /* social.share(content, title, files, url, uitext) */
+            social.share(note.content, note.title, null, null, 'Choose an app to share your note');
         }
 
         function init() {

@@ -16,7 +16,7 @@ import { ThemeManager } from '../app/shared/theme.manager';
 
 // .component('nameToUse', importedName)
 
-angular.module('easynotepad', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute'])
+angular.module('easynotepad', ['ngAnimate', 'ngTouch', 'ngAria', 'ngResource', 'ngRoute'])
   .config(config)
   .config(routerConfig)
   .run(runBlock)
