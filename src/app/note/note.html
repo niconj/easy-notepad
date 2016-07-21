@@ -7,11 +7,15 @@
         ng-change="modified()">
     </div>
     <div class="note-content-container row">
+        <!-- count -->
+        <sup class="content-count" 
+        ng-class="componentColor()" 
+        ng-bind="selection.note.content? selection.note.content.length : 0"></sup>
         <!-- content -->
         <textarea class="content col-xs-12" placeholder="Content" autofocus 
         ng-class="componentColor()" 
         ng-model="selection.note.content" 
-        ng-readonly="readOnly"
+        ng-readonly="readOnly" 
         ng-change="modified()"></textarea>
         <div class="btns-wrapper col-xs-12 text-center">
             <!-- back -->

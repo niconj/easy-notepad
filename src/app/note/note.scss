@@ -1,13 +1,12 @@
 $icon-size: 30px;
-$bottom-bar-size: 50px;
+$bottom-bar-size: 40px;
 $font-size: 16px;
 $title-size: 25px;
 
 #note-container {
     height: 100%;
-    padding: 15px 15px 0px 15px;
+    padding: 0px 15px 0px 15px;
     font-family: monospace;
-    height: 100%;
 
     i {
         font-size: $icon-size;
@@ -16,6 +15,7 @@ $title-size: 25px;
         height: 10%;
         display: flex;
         .title {
+            width: 100%;
             color: $water-green-color;
             font-weight: bold;
             text-align: center;
@@ -23,9 +23,16 @@ $title-size: 25px;
         }
     }
     .note-content-container {
+        width: 100%;
+        .content-count {
+            position: absolute;
+            margin-top: -15px; /* ugly, but am not sorry */
+            right: 15px;
+        }
         height: 90%;
         textarea.content {
-            height: calc(100% - #{$bottom-bar-size});
+            width: calc(100%);
+            height: calc(100% - #{$bottom-bar-size} - 10px);
         }
         .btns-wrapper {
             user-select: none;

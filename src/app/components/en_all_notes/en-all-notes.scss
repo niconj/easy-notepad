@@ -4,15 +4,9 @@ $bottom-icon-size: 35px;
 $font-size: 20px;
 
 #all-notes-container {
-    padding-top: 10px;
-    height: 100%;
-    /* todo: make a mixin */
-    -webkit-user-select: none; //Chrome/Safari
-    -moz-user-select: none; // Firefox
-    -ms-user-select: none; // IE10+
-    -o-user-select: none;
+    padding: 10px 15px 0px 15px;
     user-select: none;
-    font-family: monospace;
+    height: calc(100% - 10px);
 
     .all-notes {
         height: calc(100% - #{$bottom-bar-size});
@@ -21,6 +15,7 @@ $font-size: 20px;
             min-height: 50px;
             display: flex;
             button.note-select {
+                font-family: monospace;
                 text-align: left;
                 margin-left: 20px;
                 font-size: $font-size;
@@ -33,9 +28,6 @@ $font-size: 20px;
                 width: 15px;
                 i {
                     font-size: $delete-icon-size;
-                    /* icon is not perfectly centered so I need this little offset */
-                    position: absolute;
-                    transform: translate(-50%, -40%);
                 }
             }
         } 

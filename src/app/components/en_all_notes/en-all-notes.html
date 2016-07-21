@@ -1,17 +1,21 @@
-<div id="all-notes-container" class="container">
-    <div class="row text-center en-btn" ng-if="!notes.length">
-        <h3 class="col-xs-12" ng-class="componentColor()">You have no notes yet</h3>
+<div id="all-notes-container">
+    <div class="full-width text-center en-btn" ng-if="!notes.length">
+        <h3 ng-class="componentColor()">You have no notes yet</h3>
     </div>
-    <div class="all-notes row" ng-if="notes.length">
-        <div class="note-container col-xs-12" ng-repeat="note in notes">
+    <div class="all-notes" ng-if="notes.length">
+        <!-- note -->
+        <div class="note-container full-width" ng-repeat="note in notes">
+            <!-- delete -->
             <button class="note-delete en-btn pull-left" 
             ng-class="componentColor()" 
             ng-click="delete(note)"><i class="fi-x"></i></button>
+            <!-- title/open -->
             <button class="note-select en-btn" ng-click="select(note)" 
             ng-class="componentColor()" 
             ng-bind="note.title || 'Untitled'"></button>
         </div>
     </div>
+    <!-- add note -->
     <div class="add-note-container">
         <button class="invert-colors en-btn pull-left" 
         ng-click="invertColors()" ng-class="componentColor()"><i class="fi-paint-bucket"></i></button>

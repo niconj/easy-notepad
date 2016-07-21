@@ -12,7 +12,8 @@ export class NoteController {
 
         $scope.modified = () => {
             /* should add an application values service for these */
-            SelectionService.note.title = SelectionService.note.title.slice(0, 19); // fix for android maxlength
+            let note = SelectionService.note.title;
+            SelectionService.note.title = note? SelectionService.note.title.slice(0, 19) : note; // fix for android maxlength
             NotesManager.saveNote(SelectionService.note);
         }
 
@@ -22,6 +23,7 @@ export class NoteController {
         }
 
         $scope.share = () => {
+            /* todo: create Share service */
             $log.log('Sharing: ', SelectionService.note);
             if(!$window.plugins || !$window.plugins.socialsharing) return;
             let note = SelectionService.note;
@@ -30,7 +32,7 @@ export class NoteController {
         }
 
         function init() {
-            //if(!SelectionService.note) return $location.path('/');
+            if(!SelectionService.note) return $location.path('/');
             $scope.componentColor = ThemeManager.componentColor;
             $scope.selection = SelectionService;
             $scope.readOnly = false;
