@@ -1,0 +1,41 @@
+$search-query-font-size: 20px;
+$icon-size: 30px;
+$icon-container-width: 40px;
+
+#search-bar-container {
+    /* direct properties defined in main.scss */
+    .search-query-container {
+        height: 100%;
+        width: calc(100% - #{$icon-container-width});
+        display: inline-block;
+        .search-query {
+            width: 100%;
+            height: 100%;
+            color: $water-green-color;
+            text-align: center;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: $search-query-font-size;
+            padding: 0;
+            border: none;
+            background: none;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .search-btn {
+        height: 100%;
+        display: inline-flex;
+        width: $icon-container-width;
+        i {
+            width: 100%;
+            font-size: $icon-size;
+        }
+    }
+}
+
+/* transitions */
+.search-query-container.ng-hide {
+    opacity: 0;
+}

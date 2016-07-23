@@ -1,0 +1,12 @@
+<div id="search-bar-container">
+    <div class="search-query-container pull-left ng-hide" ng-show="sc.search.isSearching" ng-cloak>
+        <input class="search-query" type="text" name="search" placeholder="Search"
+        ng-model="sc.search.queryString"
+        ng-change="sc.performSearch(sc.search.queryString)">
+    </div>
+    <button class="search-btn en-btn pull-right"
+    ng-class="sc.componentColor()" 
+    ng-click="sc.toggleSearch()">
+        <i class="fi-magnifying-glass"></i>
+    </button>
+</div>

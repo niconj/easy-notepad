@@ -12,11 +12,12 @@
         ng-class="componentColor()" 
         ng-bind="selection.note.content? selection.note.content.length : 0"></sup>
         <!-- content -->
-        <textarea class="content col-xs-12" placeholder="Content" autofocus 
+        <textarea class="content col-xs-12" placeholder="Content"  
         ng-class="componentColor()" 
         ng-model="selection.note.content" 
         ng-readonly="config.readOnly" 
         ng-change="modified()"></textarea>
+        <!-- TODO: bottom-bar directive refactor to use here -->
         <div class="btns-wrapper col-xs-12 text-center"
         ng-if="displayButtons()">
             <!-- back -->

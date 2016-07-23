@@ -1,0 +1,13 @@
+$bottom-icon-size: 35px;
+
+#bottom-bar-container {
+    /* direct properties defined in main.scss */
+    .add-note-btn, 
+    .invert-colors-btn {
+        height: 100%;
+        display: inline-block;
+        i {
+            font-size: $bottom-icon-size;
+        }
+    }
+}

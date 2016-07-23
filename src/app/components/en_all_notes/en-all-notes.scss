@@ -4,6 +4,17 @@ $font-size: 20px;
 
 #all-notes-container {
     /* direct properties defined in main.scss */
+    overflow: hidden;
+    .no-notes {
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        font-size: $font-size;
+        font-family: monospace;
+        &.ng-hide {
+            opacity: 0;
+        }
+    }
     .all-notes {
         max-height: 100%;
         overflow: auto;

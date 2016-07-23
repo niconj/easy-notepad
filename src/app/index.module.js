@@ -15,6 +15,7 @@ import { BottomBar } from '../app/components/bottom_bar/bottom.bar';
 import { SelectionService } from '../app/shared/selection.service';
 import { NotesManager } from '../app/shared/notes.manager';
 import { ThemeManager } from '../app/shared/theme.manager';
+import { Search } from '../app/shared/search.js';
 
 // .component('nameToUse', importedName)
 
@@ -27,6 +28,7 @@ angular.module('easynotepad', ['ngAnimate', 'ngTouch', 'ngAria', 'ngResource', '
   .service('SelectionService', SelectionService)
   .service('NotesManager', NotesManager)
   .service('ThemeManager', ThemeManager)
+  .service('Search', Search)
 
   // controllers
   .controller('MainController', MainController)

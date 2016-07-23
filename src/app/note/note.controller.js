@@ -22,7 +22,7 @@ export class NoteController {
         }
 
         $scope.back = () => {
-            SelectionService.note = null;
+            SelectionService.releaseNote();
             $location.path('/');
         }
 
@@ -41,7 +41,7 @@ export class NoteController {
             $scope.componentColor = ThemeManager.componentColor;
             $scope.selection = SelectionService;
             $scope.config = {
-                readOnly: true
+                readOnly: false
             }
         }
 

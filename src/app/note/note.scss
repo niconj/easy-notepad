@@ -1,5 +1,5 @@
-$icon-size: 30px;
-$bottom-bar-size: 40px;
+$icon-size: 35px;
+$bottom-bar-size: 50px;
 $font-size: 16px;
 $title-size: 25px;
 $common-padding: 15px;
@@ -27,7 +27,7 @@ $common-padding: 15px;
         height: 90%;
         .content-count {
             position: absolute;
-            margin-top: calc(0px - $common-padding); /* ugly, but am not sorry */
+            margin-top: calc(0px - #{$common-padding}); /* ugly, but am not sorry */
             right: $common-padding;
         }
         textarea.content {
@@ -40,6 +40,9 @@ $common-padding: 15px;
             height: $bottom-bar-size;
             position: absolute;
             bottom:0; right:0; left:0;
+            button {
+                height: 100%;
+            }
             .pull-right {
                 position: absolute;
                 right: $common-padding;

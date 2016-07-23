@@ -1,10 +1,13 @@
 <div id="all-notes-container">
-    <div class="full-width text-center en-btn" ng-if="!notes.length">
-        <h3 ng-class="componentColor()">You have no notes yet</h3>
+    <div class="no-notes-container full-width text-center en-btn" ng-if="!notes.filteredNotes.length">
+        <h3 class="no-notes go-right" 
+        ng-show="search.isSearching" ng-class="componentColor()">There are no results for this search</h3>
+        <h3 class="no-notes go-left" 
+        ng-show="!search.isSearching" ng-class="componentColor()">You have no notes yet</h3>
     </div>
-    <div class="all-notes" ng-if="notes.length">
+    <div class="all-notes" ng-if="notes.filteredNotes.length">
         <!-- note -->
-        <div class="note-container full-width" ng-repeat="note in notes">
+        <div class="note-container full-width" ng-repeat="note in notes.filteredNotes">
             <!-- delete -->
             <button class="note-delete en-btn pull-left" 
             ng-class="componentColor()" 
