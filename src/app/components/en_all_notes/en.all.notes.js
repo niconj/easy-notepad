@@ -21,6 +21,8 @@ class EnAllNotesController {
 
     $scope.select = note => {
       SelectionService.note = note;
+      Search.queryString = null;
+      Search.isSearching = false;
       $location.path('note');
     }
 
