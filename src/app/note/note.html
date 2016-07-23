@@ -3,7 +3,7 @@
         <!-- title -->
         <input class="title col-xs-12" type="text" name="selectionTitle" placeholder="Title"  
         ng-model="selection.note.title" 
-        ng-readonly="readOnly"
+        ng-readonly="config.readOnly"
         ng-change="modified()">
     </div>
     <div class="note-content-container row">
@@ -15,7 +15,7 @@
         <textarea class="content col-xs-12" placeholder="Content" autofocus 
         ng-class="componentColor()" 
         ng-model="selection.note.content" 
-        ng-readonly="readOnly" 
+        ng-readonly="config.readOnly" 
         ng-change="modified()"></textarea>
         <div class="btns-wrapper col-xs-12 text-center"
         ng-if="displayButtons()">
@@ -30,9 +30,9 @@
             <!-- edit/view -->
             <button class="en-btn pull-right" 
             ng-class="componentColor()" 
-            ng-click="readOnly = !readOnly">
-                <i class="fi-pencil" ng-if="readOnly"></i>
-                <i class="fi-eye" ng-if="!readOnly"></i>
+            ng-click="config.readOnly = !config.readOnly">
+                <i class="fi-pencil" ng-if="config.readOnly"></i>
+                <i class="fi-eye" ng-if="!config.readOnly"></i>
             </button>
         </div>
     </div>

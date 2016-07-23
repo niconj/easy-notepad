@@ -1,18 +1,14 @@
 $bottom-bar-size: 50px;
 $delete-icon-size: 20px;
-$bottom-icon-size: 35px;
 $font-size: 20px;
 
 #all-notes-container {
-    padding: 10px 15px 0px 15px;
-    user-select: none;
-    height: calc(100% - 10px);
-
+    /* direct properties defined in main.scss */
     .all-notes {
-        height: calc(100% - #{$bottom-bar-size});
+        max-height: 100%;
         overflow: auto;
         .note-container {
-            min-height: 50px;
+            min-height: $bottom-bar-size;
             display: flex;
             button.note-select {
                 font-family: monospace;
@@ -31,25 +27,5 @@ $font-size: 20px;
                 }
             }
         } 
-    }
-
-
-    .add-note-container {
-        height: $bottom-bar-size;
-        bottom: 0px;
-        left: 0px; 
-        right: 0px;
-        position: absolute;
-        padding: 0px 15px;
-        button.add-note {
-            i {
-                font-size: $bottom-icon-size;
-            }
-        }
-        button.invert-colors {
-            i {
-                font-size: $bottom-icon-size;
-            }
-        }
     }
 }

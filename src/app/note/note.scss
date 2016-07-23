@@ -2,11 +2,11 @@ $icon-size: 30px;
 $bottom-bar-size: 40px;
 $font-size: 16px;
 $title-size: 25px;
+$common-padding: 15px;
 
 #note-container {
     height: 100%;
-    padding: 0px 15px 0px 15px;
-
+    padding: 0px $common-padding;
     i {
         font-size: $icon-size;
     }
@@ -27,8 +27,8 @@ $title-size: 25px;
         height: 90%;
         .content-count {
             position: absolute;
-            margin-top: -15px; /* ugly, but am not sorry */
-            right: 15px;
+            margin-top: calc(0px - $common-padding); /* ugly, but am not sorry */
+            right: $common-padding;
         }
         textarea.content {
             font-family: monospace;
@@ -42,11 +42,11 @@ $title-size: 25px;
             bottom:0; right:0; left:0;
             .pull-right {
                 position: absolute;
-                right: 15px;
+                right: $common-padding;
             }
             .pull-left {
                 position: absolute;
-                left: 15px;
+                left: $common-padding;
             }
         }
     }
@@ -62,6 +62,7 @@ $title-size: 25px;
     }
 }
 
+/* hack for keyboard showing on landscape */
 @media (max-height : 300px) {
     .note-content-container {
         height: 80% !important;

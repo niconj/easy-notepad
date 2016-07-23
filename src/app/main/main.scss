@@ -1,3 +1,25 @@
+$search-bar-size: 50px;
+$bottom-bar-size: 50px;
+$common-padding: 15px;
+
 .main-container {
     height: 100%;
+    en-all-notes #all-notes-container {
+        height: calc(100% - #{$bottom-bar-size} - #{$search-bar-size});
+        padding: 0px $common-padding;
+        user-select: none;
+    }
+    search-bar #search-bar-container {
+        height: $search-bar-size;
+        padding: 0px $common-padding;
+        user-select: none;
+    }
+    bottom-bar #bottom-bar-container {
+        height: $bottom-bar-size;
+        bottom: 0px;
+        left: 0px; 
+        right: 0px;
+        position: absolute;
+        padding: 0px $common-padding;
+    }
 }

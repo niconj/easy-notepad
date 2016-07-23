@@ -40,7 +40,9 @@ export class NoteController {
             if(!SelectionService.note) return $location.path('/');
             $scope.componentColor = ThemeManager.componentColor;
             $scope.selection = SelectionService;
-            $scope.readOnly = false;
+            $scope.config = {
+                readOnly: true
+            }
         }
 
     }

@@ -17,11 +17,6 @@ class EnAllNotesController {
 
     init();
 
-    $scope.createNote = () => {
-      NotesManager.newNote();
-      $location.path('note');
-    }
-
     $scope.select = note => {
       SelectionService.note = note;
       $location.path('note');
@@ -35,7 +30,6 @@ class EnAllNotesController {
     function init() {
         $scope.notes = NotesManager.getSavedNotes();
         $scope.componentColor = ThemeManager.componentColor;
-        $scope.invertColors = ThemeManager.toggle;
     }
 
   }

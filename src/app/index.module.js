@@ -8,6 +8,8 @@ import { NoteController } from './note/note.controller';
 import { EnStatusBar } from '../app/components/en_status_bar/en.status.bar';
 import { EnAllNotes } from '../app/components/en_all_notes/en.all.notes';
 import { ThemeBackground } from '../app/components/theme_background/theme.background';
+import { SearchBar } from '../app/components/search_bar/search.bar';
+import { BottomBar } from '../app/components/bottom_bar/bottom.bar';
 
 //services
 import { SelectionService } from '../app/shared/selection.service';
@@ -34,5 +36,7 @@ angular.module('easynotepad', ['ngAnimate', 'ngTouch', 'ngAria', 'ngResource', '
   .directive('enStatusBar', EnStatusBar)
   .directive('enAllNotes', EnAllNotes)
   .directive('themeBackground', ThemeBackground)
+  .directive('searchBar', SearchBar)
+  .directive('bottomBar', BottomBar)
 
   // resources
