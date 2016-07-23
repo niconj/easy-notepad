@@ -21,6 +21,7 @@ class EnAllNotesController {
 
     $scope.select = note => {
       SelectionService.note = note;
+      /* make a clean function */
       Search.queryString = null;
       Search.isSearching = false;
       $location.path('note');
@@ -28,11 +29,16 @@ class EnAllNotesController {
 
     $scope.delete = note => {
       NotesManager.deleteNote(note);
+      /* make a clean function */
+      Search.queryString = null;
+      Search.isSearching = false;
     }
 
     function init() {
-        $scope.notes = NotesManager;
-        $scope.componentColor = ThemeManager.componentColor;
+      /* sent this to NotesManager using resetNotes() or something */
+      NotesManager.filteredNotes = Search.performSearch();
+      $scope.notes = NotesManager;
+      $scope.componentColor = ThemeManager.componentColor;
     }
 
   }
