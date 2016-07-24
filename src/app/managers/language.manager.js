@@ -1,7 +1,9 @@
 export class Language {
     constructor() {
 
-        this.currentLanguage = 'english';
+        this.currentLanguage = 'spanish';
+
+        this.getText = where => this.texts[where][this.currentLanguage];
 
         this.texts = {
             note_content_placeholder: {
@@ -15,10 +17,13 @@ export class Language {
             search_input_placeholder: {
                 english: 'Search', 
                 spanish: 'Buscar'
+            }, 
+            delete_note: {
+                english: 'You are about to delete the note', 
+                spanish: 'Estas por eliminar la nota'
             }
         };
 
-        this.getText = what => this.texts[what][this.currentLanguage];
         
     }
 }

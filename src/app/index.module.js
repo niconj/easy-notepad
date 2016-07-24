@@ -10,6 +10,7 @@ import { ThemeBackground } from '../app/components/theme_background/theme.backgr
 import { SearchBar } from '../app/components/search_bar/search.bar';
 import { BottomBar } from '../app/components/bottom_bar/bottom.bar';
 import { Vibrate } from '../app/components/vibrate/vibrate';
+import { Modal } from '../app/components/modal/modal';
 
 //services
 import { Selection } from '../app/managers/selection.manager';
@@ -18,6 +19,7 @@ import { Theme } from '../app/managers/theme.manager';
 import { Search } from '../app/managers/search.manager';
 import { Language } from '../app/managers/language.manager';
 import { Vibration } from '../app/managers/vibration';
+import { ModalHelper } from '../app/managers/modal.helper';
 
 // .component('nameToUse', importedName)
 
@@ -33,6 +35,7 @@ angular.module('easynotepad', ['ngAnimate', 'ngTouch', 'ngAria', 'ngResource', '
   .service('Search', Search)
   .service('Language', Language)
   .service('Vibration', Vibration)
+  .service('ModalHelper', ModalHelper)
 
   // controllers
   .controller('MainController', MainController)
@@ -44,5 +47,6 @@ angular.module('easynotepad', ['ngAnimate', 'ngTouch', 'ngAria', 'ngResource', '
   .directive('searchBar', SearchBar)
   .directive('bottomBar', BottomBar)
   .directive('vibrate', Vibrate)
+  .directive('modal', Modal)
 
   // resources

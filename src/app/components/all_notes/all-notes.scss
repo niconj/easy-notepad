@@ -7,8 +7,8 @@ $font-size: 20px;
     overflow: hidden;
     .no-notes {
         position: absolute;
-        left: 15px;
-        right: 15px;
+        left: $common-distance;
+        right: $common-distance;
         font-size: $font-size;
         font-family: monospace;
         &.ng-hide {
@@ -31,9 +31,9 @@ $font-size: 20px;
                 overflow-wrap: break-word;
             }
             button.note-delete {
-                margin-left: 15px;
+                margin-left: $common-distance;
                 align-items: stretch;
-                width: 15px;
+                width: $common-distance;
                 i {
                     font-size: $delete-icon-size;
                 }

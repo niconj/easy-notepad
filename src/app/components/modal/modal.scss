@@ -1,0 +1,41 @@
+$font-size: 20px;
+$icons-size: 25px;
+$buttons-container-size: 40px;
+
+.modal-container {
+    position: fixed;
+    z-index: 999; 
+    left: 0; top: 0; bottom: 0; right: 0;
+    background-color: $black-color;
+    background-color: rgba($black-color, 0.5);
+    display: flex;
+    .modal-content {
+        margin: auto;
+        padding: $common-distance;
+        border-radius: 10px;
+        width: 80%;
+        .modal-text {
+            font-size: $font-size;
+            font-family: monospace;
+            white-space: pre;
+        }
+        .options {
+            height: $buttons-container-size;
+            button.cancel-btn, 
+            button.accept-btn {
+                height: 100%;
+                display: inline-block;
+                /* square button, for easier tap */
+                width: $buttons-container-size;
+                i {
+                    font-size: $icons-size;
+                }
+            }
+        }
+    }
+}
+
+/* transitions */
+.modal-container.ng-hide {
+    opacity: 0;
+}
