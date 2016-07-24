@@ -29,6 +29,10 @@ export class Language {
             no_notes: {
                 english: 'You have no notes yet', 
                 spanish: 'Todavia no tienes notas'
+            }, 
+            untitled: {
+                english: 'Untitled', 
+                spanish: 'Sin titulo'
             }
         };
 
