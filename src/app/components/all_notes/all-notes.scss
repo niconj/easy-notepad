@@ -1,0 +1,43 @@
+$bottom-bar-size: 50px;
+$delete-icon-size: 20px;
+$font-size: 20px;
+
+#all-notes-container {
+    /* direct properties defined in main.scss */
+    overflow: hidden;
+    .no-notes {
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        font-size: $font-size;
+        font-family: monospace;
+        &.ng-hide {
+            opacity: 0;
+        }
+    }
+    .all-notes {
+        max-height: 100%;
+        overflow: auto;
+        .note-container {
+            min-height: $bottom-bar-size;
+            display: flex;
+            button.note-select {
+                font-family: monospace;
+                text-align: left;
+                margin-left: 20px;
+                font-size: $font-size;
+                width: 100%;
+                word-break: break-all;
+                overflow-wrap: break-word;
+            }
+            button.note-delete {
+                margin-left: 15px;
+                align-items: stretch;
+                width: 15px;
+                i {
+                    font-size: $delete-icon-size;
+                }
+            }
+        } 
+    }
+}

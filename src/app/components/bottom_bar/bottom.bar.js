@@ -14,13 +14,13 @@ export function BottomBar() {
 }
 
 class BottomBarController {
-  constructor (ThemeManager, NotesManager, $location, Search) {
+  constructor (Theme, NotesManager, $location, Search) {
     'ngInject';
 
-    this.componentColor = ThemeManager.componentColor;
+    this.componentColor = Theme.componentColor;
 
     
-    this.invertColors = ThemeManager.toggle;
+    this.invertColors = Theme.toggle;
     
     this.createNote = () => {
       Search.stopSearch();

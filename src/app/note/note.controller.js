@@ -1,9 +1,10 @@
 export class NoteController {
     constructor ($scope, 
-        SelectionService, 
+        Selection, 
         NotesManager, 
         $location,  
-        ThemeManager, 
+        Theme, 
+        Language, 
         $window, 
         $log) {
         'ngInject';
@@ -15,31 +16,32 @@ export class NoteController {
 
         $scope.modified = () => {
             /* should add an application values service for these */
-            let note = SelectionService.note.title;
+            let note = Selection.note.title;
             /* fix for android maxlength */
-            SelectionService.note.title = note? SelectionService.note.title.slice(0, 19) : note;
-            NotesManager.saveNote(SelectionService.note);
+            Selection.note.title = note? Selection.note.title.slice(0, 19) : note;
+            NotesManager.saveNote(Selection.note);
         }
 
         $scope.back = () => {
-            SelectionService.releaseNote();
+            Selection.releaseNote();
             $location.path('/');
         }
 
         $scope.share = () => {
             /* todo: create Share service */
-            $log.log('Sharing: ', SelectionService.note);
+            $log.log('Sharing: ', Selection.note);
             if(!$window.plugins || !$window.plugins.socialsharing) return;
-            let note = SelectionService.note;
+            let note = Selection.note;
             let social = $window.plugins.socialsharing;
             /* social.share(content, title, files, url, uitext) */
             social.share(note.content, note.title, null, null, 'Choose an app to share your note');
         }
 
         function init() {
-            if(!SelectionService.note) return $location.path('/');
-            $scope.componentColor = ThemeManager.componentColor;
-            $scope.selection = SelectionService;
+            if(!Selection.note) return $location.path('/');
+            $scope.componentColor = Theme.componentColor;
+            $scope.text = Language.getText;
+            $scope.selection = Selection;
             $scope.config = {
                 readOnly: false
             }

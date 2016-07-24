@@ -12,6 +12,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.easy.notepad"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.easy.notepad"
         }
     },
     "dependent_plugins": {}

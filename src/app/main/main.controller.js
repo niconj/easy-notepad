@@ -1,9 +1,9 @@
 export class MainController {
   constructor ($scope, 
-    SelectionService) {
+    Selection) {
     'ngInject';
 
-    $scope.selection = SelectionService;
+    $scope.selection = Selection;
     
   }
 }

@@ -14,7 +14,7 @@ export function SearchBar() {
 }
 
 class SearchBarController {
-  constructor (ThemeManager, Search, NotesManager, $log) {
+  constructor (Theme, Search, NotesManager, $log, Language) {
     'ngInject';
 
     this.toggleSearch = () => {
@@ -28,9 +28,11 @@ class SearchBarController {
 
     this.performSearch = query => NotesManager.filteredNotes = Search.performSearch(query);
     
-    this.componentColor = ThemeManager.componentColor;
+    this.componentColor = Theme.componentColor;
     
     this.search = Search;
+
+    this.text = Language.getText;
 
   }
 }

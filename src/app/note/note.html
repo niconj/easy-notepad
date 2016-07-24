@@ -1,9 +1,10 @@
 <div id="note-container" class="container">
     <div class="note-title-container row">
         <!-- title -->
-        <input class="title col-xs-12" type="text" name="selectionTitle" placeholder="Title"  
+        <input class="title col-xs-12" type="text" name="selectionTitle" 
+        placeholder="{{::text('note_title_placeholder')}}" 
         ng-model="selection.note.title" 
-        ng-readonly="config.readOnly"
+        ng-readonly="config.readOnly" 
         ng-change="modified()">
     </div>
     <div class="note-content-container row">
@@ -12,7 +13,8 @@
         ng-class="componentColor()" 
         ng-bind="selection.note.content? selection.note.content.length : 0"></sup>
         <!-- content -->
-        <textarea class="content col-xs-12" placeholder="Content"  
+        <textarea class="content col-xs-12" 
+        placeholder="{{::text('note_content_placeholder')}}" 
         ng-class="componentColor()" 
         ng-model="selection.note.content" 
         ng-readonly="config.readOnly" 
@@ -21,15 +23,15 @@
         <div class="btns-wrapper col-xs-12 text-center"
         ng-if="displayButtons()">
             <!-- back -->
-            <button class="en-btn pull-left" 
+            <button class="en-btn pull-left" vibrate 
             ng-class="componentColor()" 
             ng-click="back()"><i class="fi-arrow-left"></i></button>
             <!-- share -->
-            <button class="en-btn" 
+            <button class="en-btn" vibrate 
             ng-class="componentColor()" 
             ng-click="share()"><i class="fi-share"></i></button>
             <!-- edit/view -->
-            <button class="en-btn pull-right" 
+            <button class="en-btn pull-right" vibrate 
             ng-class="componentColor()" 
             ng-click="config.readOnly = !config.readOnly">
                 <i class="fi-pencil" ng-if="config.readOnly"></i>
