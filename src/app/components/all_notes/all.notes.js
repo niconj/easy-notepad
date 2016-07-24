@@ -42,6 +42,7 @@ class AllNotesController {
             NotesManager.filteredNotes = Search.performSearch();
             $scope.notes = NotesManager;
             $scope.componentColor = Theme.componentColor;
+            $scope.text = Language.getText;
         }
 
     }

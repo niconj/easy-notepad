@@ -1,7 +1,7 @@
 export class Vibration {
     constructor() {
-        /* using 25ms as default */
-        let vibrate = () => navigator.vibrate(25);
+        /* using 20ms as default */
+        let vibrate = () => navigator.vibrate(20);
         return vibrate;
     }
 }
