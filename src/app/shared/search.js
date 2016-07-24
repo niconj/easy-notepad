@@ -8,6 +8,11 @@ export class Search {
 
     this.toggleSearch = () => this.isSearching = !this.isSearching;
 
+    this.stopSearch = () => {
+        this.isSearching = false;
+        this.queryString = null;
+    }
+
     this.performSearch = query => {
         let notes = NotesManager.getNotes();
         /* ugly hotfix, TODO: refator */

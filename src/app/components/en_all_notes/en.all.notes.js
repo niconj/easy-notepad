@@ -29,8 +29,7 @@ class EnAllNotesController {
 
     $scope.delete = note => {
       NotesManager.deleteNote(note);
-      /* make a clean function */
-      Search.isSearching = false;
+      if(Search.isSearching) NotesManager.filteredNotes = Search.performSearch(Search.queryString);
     }
 
     function init() {

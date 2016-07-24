@@ -18,10 +18,12 @@ class BottomBarController {
     'ngInject';
 
     this.componentColor = ThemeManager.componentColor;
+
+    
     this.invertColors = ThemeManager.toggle;
+    
     this.createNote = () => {
-      Search.queryString = null;
-      Search.isSearching = false;
+      Search.stopSearch();
       NotesManager.newNote();
       $location.path('note');
     }

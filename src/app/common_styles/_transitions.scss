@@ -4,3 +4,28 @@
 .ng-hide-remove {
     transition: all linear 0.5s !important;
 }
+
+.dark {
+    transition: all 0.5s ease;
+    color: $grey-color;
+}
+
+.light {
+    transition: all 0.5s ease;
+    color: $very-light-grey-color;
+}
+
+.greeny {
+    transition: all 0.5s ease;
+    color: $water-green-color;
+}
+
+.dark-bg {
+    transition: all 0.5s ease;
+    background-color: $grey-color;
+}
+
+.light-bg {
+    transition: all 0.5s ease;
+    background-color: $very-light-grey-color;
+}
