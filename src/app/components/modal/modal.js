@@ -5,7 +5,8 @@ export function Modal() {
         restrict: 'E',
         templateUrl: 'app/components/modal/modal.html',
         scope: {},
-        controller: ModalController
+        controller: ModalController,
+        link: modalLink
     };
 
     return directive;
@@ -19,7 +20,7 @@ class ModalController {
 
         $scope.componentColor = Theme.componentColor;
 
-        /* maybe refactor to the service */
+        /* should refactor to the service? */
         $scope.backgroundColor = () => Theme.backgroundColor() + '-bg';
 
         $scope.accept = () => {
@@ -30,4 +31,10 @@ class ModalController {
         $scope.getText = Language.getText;
 
     }
+}
+
+function modalLink(scope, element) {
+    /* used to avoid closing the modal when clicking inside the element boundaries */
+    var target = angular.element(element[0].querySelector('.modal-content'));
+    target.on('click touchend', event => event.stopPropagation());
 }

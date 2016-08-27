@@ -7,6 +7,7 @@ import { NoteController } from './note/note.controller';
 //directives
 import { AllNotes } from '../app/components/all_notes/all.notes';
 import { ThemeBackground } from '../app/components/theme_background/theme.background';
+import { OutsideClick } from '../app/components/outside_click/outside.click';
 import { SearchBar } from '../app/components/search_bar/search.bar';
 import { BottomBar } from '../app/components/bottom_bar/bottom.bar';
 import { Vibrate } from '../app/components/vibrate/vibrate';
@@ -44,6 +45,7 @@ angular.module('easynotepad', ['ngAnimate', 'ngTouch', 'ngAria', 'ngResource', '
   // directives
   .directive('allNotes', AllNotes)
   .directive('themeBackground', ThemeBackground)
+  .directive('outsideClick', OutsideClick)
   .directive('searchBar', SearchBar)
   .directive('bottomBar', BottomBar)
   .directive('vibrate', Vibrate)
