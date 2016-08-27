@@ -1,8 +1,8 @@
 $toggle-border-color: transparent;
 $toggle-bg-color-when-right: rgba($water-green-color, .5);
 $toggle-bg-color-when-left: rgba($water-green-color, .5);
-$toggle-active-color: grey;
-$toggle-ball-transition: left .3s cubic-bezier(0.175, 0.885, 0.320, 1.275), padding .3s ease, margin .3s ease, background-color 0.5s ease;
+$toggle-active-color: rgba($water-green-color, .5);
+$toggle-ball-transition: left 1s cubic-bezier(0.175, 0.885, 0.320, 1.275), padding .8s ease, margin 1s ease, background-color 1s ease;
 $toggle-ball-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 4px 0 rgba(0,0,0,.08);
 $icon-size: 30px;
 $icon-container-width: 40px;
@@ -11,9 +11,6 @@ $font-size: 16px;
 #settings-container {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     font-size: $font-size;
 
@@ -42,8 +39,15 @@ $font-size: 16px;
     }
 
     .options-container {
-        width: calc(100% - 30px);
-        padding: 0px 60px;
+        width: calc(100% - 80px); /* from padding */
+        height: calc(100% - 50px); /* from bottombar */
+        padding: 0px 40px;
+        overflow: auto;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
         .title {
             margin: 0px;
             padding-top: 5px;
@@ -52,6 +56,9 @@ $font-size: 16px;
                 padding-top: 0px;
                 border-top: none;
             }
+        }
+        .va-wrapper {
+            width: 100%;
         }
     }
 
