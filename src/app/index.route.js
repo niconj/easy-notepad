@@ -9,7 +9,12 @@ export function routerConfig ($routeProvider) {
     .when('/note', {
       templateUrl: 'app/note/note.html',
       controller: 'NoteController',
-      controllerAs: 'note'
+      controllerAs: 'nc'
+    })
+    .when('/settings', {
+      templateUrl: 'app/settings/settings.html',
+      controller: 'SettingsController',
+      controllerAs: 'st'
     })
     .otherwise({
       redirectTo: '/'

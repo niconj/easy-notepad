@@ -1,6 +1,5 @@
 export class NoteController {
-    constructor ($scope, 
-        Selection, 
+    constructor (Selection, 
         NotesManager, 
         $location,  
         Theme, 
@@ -9,41 +8,47 @@ export class NoteController {
         $log) {
         'ngInject';
 
+        let nc = this;
+
         init();
 
-        /* refactor to directive */
-        $scope.displayButtons = () => $window.innerHeight > 300;
+        /* todo: refactor to directive */
+        nc.displayButtons = () => $window.innerHeight > 300;
 
-        $scope.modified = () => {
-            /* should add an application values service for these */
-            let note = Selection.note.title;
-            /* fix for android maxlength */
-            Selection.note.title = note? Selection.note.title.slice(0, 19) : note;
-            NotesManager.saveNote(Selection.note);
+        nc.modified = () => {
+            /* fix for android maxlength 
+            these values should be angular constants */
+            let note = Selection.note;
+            note.title = note? note.title.slice(0, 19) : note.title;
+            NotesManager.saveNote(note);
         }
 
-        $scope.back = () => {
+        nc.back = () => {
             Selection.releaseNote();
             $location.path('/');
         }
 
-        $scope.share = () => {
-            /* todo: create Share service */
+        nc.share = () => {
+            /* todo: create Share service or a Cordova wrapper */
             $log.log('Sharing: ', Selection.note);
             if(!$window.plugins || !$window.plugins.socialsharing) return;
-            let note = Selection.note;
             let social = $window.plugins.socialsharing;
+            let note = Selection.note;
             /* social.share(content, title, files, url, uitext) */
             social.share(note.content, note.title, null, null, 'Choose an app to share your note');
         }
 
         function init() {
             if(!Selection.note) return $location.path('/');
-            $scope.componentColor = Theme.componentColor;
-            $scope.text = Language.getText;
-            $scope.selection = Selection;
-            $scope.config = {
-                readOnly: false
+            nc.componentColor = Theme.componentColor;
+            nc.getText = Language.getText;
+            nc.note = Selection.note;
+
+            nc.config = {
+                readOnly: false, 
+                toggle: function() {
+                    this.readOnly = !this.readOnly;
+                }
             }
         }
 

@@ -2,40 +2,40 @@
     <div class="note-title-container row">
         <!-- title -->
         <input class="title col-xs-12" type="text" name="selectionTitle" 
-        placeholder="{{::text('note_title_placeholder')}}" 
-        ng-model="selection.note.title" 
-        ng-readonly="config.readOnly" 
-        ng-change="modified()">
+        placeholder="{{::nc.getText('note_title_placeholder')}}" 
+        ng-model="nc.note.title" 
+        ng-readonly="nc.config.readOnly" 
+        ng-change="nc.modified()">
     </div>
     <div class="note-content-container row">
         <!-- count -->
         <sup class="content-count" 
         ng-class="componentColor()" 
-        ng-bind="selection.note.content? selection.note.content.length : 0"></sup>
+        ng-bind="nc.note.content? nc.note.content.length : 0"></sup>
         <!-- content -->
         <textarea class="content col-xs-12" 
-        placeholder="{{::text('note_content_placeholder')}}" 
-        ng-class="componentColor()" 
-        ng-model="selection.note.content" 
-        ng-readonly="config.readOnly" 
-        ng-change="modified()"></textarea>
+        placeholder="{{::nc.getText('note_content_placeholder')}}" 
+        ng-class="nc.componentColor()" 
+        ng-model="nc.note.content" 
+        ng-readonly="note.config.readOnly" 
+        ng-change="nc.modified()"></textarea>
         <!-- TODO: bottom-bar directive refactor to use here -->
         <div class="btns-wrapper col-xs-12 text-center" 
-        ng-if="displayButtons()">
+        ng-if="nc.displayButtons()">
             <!-- back -->
             <button class="en-btn pull-left" vibrate 
-            ng-class="componentColor()" 
-            ng-click="back()"><i class="fi-arrow-left"></i></button>
+            ng-class="nc.componentColor()" 
+            ng-click="nc.back()"><i class="fi-arrow-left"></i></button>
             <!-- share -->
             <button class="en-btn" vibrate 
-            ng-class="componentColor()" 
-            ng-click="share()"><i class="fi-share"></i></button>
+            ng-class="nc.componentColor()" 
+            ng-click="nc.share()"><i class="fi-share"></i></button>
             <!-- edit/view -->
             <button class="en-btn pull-right" vibrate 
-            ng-class="componentColor()" 
-            ng-click="config.readOnly = !config.readOnly">
-                <i class="fi-pencil" ng-if="config.readOnly"></i>
-                <i class="fi-eye" ng-if="!config.readOnly"></i>
+            ng-class="nc.componentColor()" 
+            ng-click="nc.config.toggle()">
+                <i class="fi-pencil" ng-if="nc.config.readOnly"></i>
+                <i class="fi-eye" ng-if="!nc.config.readOnly"></i>
             </button>
         </div>
     </div>

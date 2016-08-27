@@ -6,7 +6,8 @@ $icon-container-width: 40px;
     /* direct properties defined in main.scss */
     .search-query-container {
         height: 100%;
-        width: calc(100% - #{$icon-container-width});
+        /* calculating width to center between search and settins button*/
+        width: calc(100% - #{$icon-container-width * 2});
         display: inline-block;
         .search-query {
             width: 100%;

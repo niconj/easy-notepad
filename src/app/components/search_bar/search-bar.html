@@ -1,10 +1,18 @@
 <div id="search-bar-container">
-    <div class="search-query-container pull-left ng-hide" ng-show="sc.search.isSearching" ng-cloak>
+    <!-- settings -->
+    <button class="search-btn en-btn pull-left" vibrate 
+    ng-class="sc.componentColor()" 
+    ng-click="sc.goToSettings()">
+        <i class="fi-widget"></i>
+    </button>
+    <!-- search box -->
+    <div class="search-query-container ng-hide" ng-show="sc.search.isSearching" ng-cloak>
         <input class="search-query" type="text" name="search" 
         placeholder="{{::sc.text('search_input_placeholder')}}" 
         ng-model="sc.search.queryString" 
         ng-change="sc.performSearch(sc.search.queryString)">
     </div>
+    <!-- search toggle -->
     <button class="search-btn en-btn pull-right" vibrate 
     ng-class="sc.componentColor()" 
     ng-click="sc.toggleSearch()">
