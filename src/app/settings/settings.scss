@@ -2,7 +2,7 @@ $toggle-border-color: transparent;
 $toggle-bg-color-when-right: rgba($water-green-color, .5);
 $toggle-bg-color-when-left: rgba($water-green-color, .5);
 $toggle-active-color: rgba($water-green-color, .5);
-$toggle-ball-transition: left 1s cubic-bezier(0.175, 0.885, 0.320, 1.275), padding .8s ease, margin 1s ease, background-color 1s ease;
+$toggle-ball-transition: left .4s cubic-bezier(0.175, 0.885, 0.320, 1.275), padding .8s ease, margin .4s ease, background-color .7s ease;
 $toggle-ball-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 4px 0 rgba(0,0,0,.08);
 $icon-size: 30px;
 $icon-container-width: 40px;
