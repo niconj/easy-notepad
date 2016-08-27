@@ -1,0 +1,61 @@
+<div id="settings-container">
+    <header class="settings-header">
+        <button class="home-btn en-btn pull-left" vibrate 
+        ng-class="st.componentColor()" 
+        ng-click="st.goHome()">
+            <i class="fi-home"></i>
+        </button>
+    </header>
+    <div class="options-container">
+        <!-- TODO: refactor toggles to directives for reuse -->
+        <p class="en-btn mono title" ng-class="st.componentColor()" ng-bind="st.getText('language')"></p>
+        <div class="toggle-container">
+            <span class="pseudo-left-label en-btn mono" ng-class="st.componentColor()">English</span>
+            <input id="lg-toggle" type="checkbox" class="tgl tgl-ios" 
+            ng-false-value="'english'" ng-true-value="'spanish'" 
+            ng-model="st.lang" ng-change="st.setLang()">
+            <label for="lg-toggle" class="tgl-btn">
+                <div class="ball" ng-class="st.componentColor() + '-bg'"></div>
+            </label>
+            <span class="pseudo-right-label en-btn mono" ng-class="st.componentColor()">Espa&ntilde;ol</span>
+        </div>
+
+        <p class="en-btn mono title" ng-class="st.componentColor()" ng-bind="st.getText('theme')"></p>
+        <div class="toggle-container">
+            <span class="pseudo-left-label en-btn mono" ng-class="st.componentColor()" ng-bind="st.getText('light')"></span>
+            <input id="color-toggle" type="checkbox" class="tgl tgl-ios" 
+            ng-false-value="'light'" ng-true-value="'dark'" 
+            ng-model="st.themeColor" ng-change="st.setThemeColor()">
+            <label for="color-toggle" class="tgl-btn">
+                <div class="ball" ng-class="st.componentColor() + '-bg'"></div>
+            </label>
+            <span class="pseudo-right-label en-btn mono" ng-class="st.componentColor()" ng-bind="st.getText('dark')"></span>
+        </div>
+
+        <p class="en-btn mono title" ng-class="st.componentColor()" ng-bind="st.getText('font')"></p>
+        <div class="toggle-container">
+            <span class="pseudo-left-label en-btn mono" ng-class="st.componentColor()">Monospace</span>
+            <input id="font-toggle" type="checkbox" class="tgl tgl-ios" 
+            ng-false-value="'mono'" ng-true-value="'roboto'" 
+            ng-model="st.fontFace"
+            ng-disabled="true">
+            <label for="font-toggle" class="tgl-btn disabled-bg">
+                <div class="ball disabled-ball"></div>
+            </label>
+            <span class="pseudo-right-label en-btn mono" ng-class="st.componentColor()">Roboto</span>
+        </div>
+
+        <p class="en-btn mono title" ng-class="st.componentColor()" ng-bind-html="st.getText('text_size')"></p>
+        <div class="toggle-container">
+            <span class="pseudo-left-label en-btn mono" ng-class="st.componentColor()">Normal</span>
+            <input id="size-toggle" type="checkbox" class="tgl tgl-ios" 
+            ng-false-value="'normal'" ng-true-value="'big'" 
+            ng-model="st.fontSize"
+            ng-disabled="true">
+            <label for="size-toggle" class="tgl-btn disabled-bg">
+                <div class="ball disabled-ball"></div>
+            </label>
+            <span class="pseudo-right-label en-btn mono" ng-class="st.componentColor()" ng-bind="st.getText('big')"></span>
+        </div>
+    </div>
+</div>

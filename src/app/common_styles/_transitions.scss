@@ -2,30 +2,30 @@
 .ng-hide-remove, 
 .ng-hide-add, 
 .ng-hide-remove {
-    transition: all linear 0.25s !important;
+    transition: all linear 0.2s;
 }
 
 .dark {
-    transition: all 0.5s ease;
-    color: $grey-color;
+    transition: color 0.5s ease;
+    color: $grey-color !important;
 }
 
 .light {
-    transition: all 0.5s ease;
-    color: $very-light-grey-color;
+    transition: color 0.5s ease;
+    color: $very-light-grey-color !important;
 }
 
 .greeny {
-    transition: all 0.5s ease;
-    color: $water-green-color;
+    transition: color 0.5s ease;
+    color: $water-green-color !important;
 }
 
 .dark-bg {
-    transition: all 0.5s ease;
-    background-color: $grey-color;
+    transition: background-color 0.5s ease;
+    background-color: $grey-color !important;
 }
 
 .light-bg {
-    transition: all 0.5s ease;
-    background-color: $very-light-grey-color;
+    transition: background-color 0.5s ease;
+    background-color: $very-light-grey-color !important;
 }

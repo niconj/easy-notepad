@@ -1,9 +1,24 @@
 export class Language {
-    constructor() {
+    constructor($window, $log) {
+        'ngInject'
 
-        this.currentLanguage = 'spanish';
+        var ls = $window.localStorage;
+        var spanish = 'spanish';
 
-        this.getText = where => this.texts[where][this.currentLanguage];
+        this.currentLang = savedLang() || spanish;
+
+        this.getText = where => this.texts[where][this.currentLang];
+
+        this.setLang = lang => {
+            ls.setItem('lang', lang);
+            return this.currentLang = lang;
+        }
+
+        function savedLang() {
+            let savedLang = ls.getItem('lang');
+            $log.info(savedLang ? 'Saved language was ' + savedLang : 'No saved theme');
+            return savedLang;
+        }
 
         this.texts = {
             note_content_placeholder: {
@@ -33,6 +48,34 @@ export class Language {
             untitled: {
                 english: 'Untitled', 
                 spanish: 'Sin titulo'
+            }, 
+            language: {
+                english: 'Language', 
+                spanish: 'Idioma'
+            }, 
+            theme: {
+                english: 'Theme', 
+                spanish: 'Tema'
+            }, 
+            light: {
+                english: 'Light', 
+                spanish: 'Claro'
+            }, 
+            dark: {
+                english: 'Dark', 
+                spanish: 'Oscuro'
+            }, 
+            font: {
+                english: 'Font', 
+                spanish: 'Fuente'
+            }, 
+            text_size: {
+                english: 'Text size', 
+                spanish: 'Tama&ntilde;o del texto'
+            }, 
+            big: {
+                english: 'Big', 
+                spanish: 'Grande'
             }
         };
 

@@ -1,0 +1,129 @@
+$toggle-border-color: transparent;
+$toggle-bg-color-when-right: rgba($water-green-color, .5);
+$toggle-bg-color-when-left: rgba($water-green-color, .5);
+$toggle-active-color: grey;
+$toggle-ball-transition: left .3s cubic-bezier(0.175, 0.885, 0.320, 1.275), padding .3s ease, margin .3s ease, background-color 0.5s ease;
+$toggle-ball-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 4px 0 rgba(0,0,0,.08);
+$icon-size: 30px;
+$icon-container-width: 40px;
+$font-size: 16px;
+
+#settings-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: $font-size;
+
+    .disabled-bg {
+        background-color: rgba(grey, .5) !important;
+    }
+    .disabled-ball {
+        background-color: rgba(black, .5) !important;
+    }
+
+    .settings-header {
+        position: fixed;
+        width: calc(100% - 30px);
+        padding: 0px 15px;
+        top: 0;
+        height: 50px;
+        .home-btn {
+            height: 100%;
+            display: inline-flex;
+            width: $icon-container-width;
+            i {
+                width: 100%;
+                font-size: $icon-size;
+            }
+        }
+    }
+
+    .options-container {
+        width: calc(100% - 30px);
+        padding: 0px 60px;
+        .title {
+            margin: 0px;
+            padding-top: 5px;
+            border-top: 1px solid $water-green-color;
+            &:first-child {
+                padding-top: 0px;
+                border-top: none;
+            }
+        }
+    }
+
+    .toggle-container {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 10px auto 20px auto;
+
+        .pseudo-left-label {
+            margin-right: auto;
+        }
+
+        .pseudo-right-label {
+            margin-left: auto;
+        }
+
+        .tgl {
+            display: none;
+            + .tgl-btn {
+                outline: none;
+                display: inline-block;
+                width: 70px;
+                height: 32px;
+                position: absolute;
+                user-select: none;
+                & .ball{
+                    position: relative;
+                    width: 50%;
+                    height: 99%;
+                }
+                & .ball {
+                    left: 0;
+                }
+            }
+            &:checked + .tgl-btn .ball {
+                left: 50%;
+            }
+        }
+
+        .tgl-ios {
+            + .tgl-btn {
+                background: $toggle-bg-color-when-left;
+                border-radius: 20px;
+                padding: 2px;
+                transition: all .5s ease;
+                /* toggle border should be set here */
+                & .ball {
+                    border-radius: 20px;
+                    background: $water-green-color;
+                    transition: $toggle-ball-transition;
+                    box-shadow: $toggle-ball-box-shadow;
+                }
+                &:active {
+                    box-shadow: inset 0 0 0 20px $toggle-active-color;
+                    & .ball {
+                        padding-right: .8em;
+                    }
+                }
+            }
+            &:checked + .tgl-btn {
+                background: $toggle-bg-color-when-right;
+                &:active {
+                    box-shadow: none;
+                    & .ball {
+                        margin-left: -.8em;
+                    }
+                }
+            }
+        }
+    }
+
+}

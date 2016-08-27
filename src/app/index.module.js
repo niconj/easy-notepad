@@ -25,7 +25,7 @@ import { ModalHelper } from '../app/managers/modal.helper';
 
 // .component('nameToUse', importedName)
 
-angular.module('easynotepad', ['ngAnimate', 'ngTouch', 'ngAria', 'ngResource', 'ngRoute'])
+angular.module('easynotepad', ['ngAnimate', 'ngTouch', 'ngAria', 'ngResource', 'ngRoute', 'ngSanitize'])
   .config(config)
   .config(routerConfig)
   .run(runBlock)

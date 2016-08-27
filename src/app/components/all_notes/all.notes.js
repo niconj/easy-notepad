@@ -27,7 +27,7 @@ class AllNotesController {
 
         $scope.delete = note => {
             let config = {
-                text: `${Language.getText('delete_note')}:\n${note.title || Language.getText('untitled')}`, 
+                text: `${Language.getText('delete_note')}:\n<span class="greeny">${note.title || Language.getText('untitled')}</span>`, 
                 isShowing: true, 
                 acceptCallback: () => {
                     NotesManager.deleteNote(note);

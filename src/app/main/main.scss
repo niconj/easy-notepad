@@ -4,7 +4,7 @@ $common-padding: 15px;
 
 .main-container {
     height: 100%;
-    en-all-notes #all-notes-container {
+    all-notes #all-notes-container {
         height: calc(100% - #{$bottom-bar-size} - #{$search-bar-size});
         padding: 0px $common-padding;
         user-select: none;
