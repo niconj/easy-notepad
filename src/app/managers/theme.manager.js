@@ -22,7 +22,7 @@ export class Theme {
 
     function savedTheme() {
         let savedTheme = ls.getItem('theme');
-        $log.log(savedTheme ? 'Saved theme was ' + savedTheme : 'No saved theme');
+        $log.info(savedTheme ? 'Saved theme was ' + savedTheme : 'No saved theme');
         return savedTheme;
     }
     

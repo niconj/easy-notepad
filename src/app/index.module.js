@@ -3,6 +3,7 @@ import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { NoteController } from './note/note.controller';
+import { SettingsController } from './settings/settings.controller';
 
 //directives
 import { AllNotes } from '../app/components/all_notes/all.notes';
@@ -41,6 +42,7 @@ angular.module('easynotepad', ['ngAnimate', 'ngTouch', 'ngAria', 'ngResource', '
   // controllers
   .controller('MainController', MainController)
   .controller('NoteController', NoteController)
+  .controller('SettingsController', SettingsController)
 
   // directives
   .directive('allNotes', AllNotes)
