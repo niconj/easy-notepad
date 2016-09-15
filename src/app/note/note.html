@@ -10,14 +10,14 @@
     <div class="note-content-container row">
         <!-- count -->
         <sup class="content-count" 
-        ng-class="componentColor()" 
+        ng-class="nc.componentColor()" 
         ng-bind="nc.note.content? nc.note.content.length : 0"></sup>
         <!-- content -->
         <textarea class="content col-xs-12" 
         placeholder="{{::nc.getText('note_content_placeholder')}}" 
         ng-class="nc.componentColor()" 
         ng-model="nc.note.content" 
-        ng-readonly="note.config.readOnly" 
+        ng-readonly="nc.config.readOnly" 
         ng-change="nc.modified()"></textarea>
         <!-- TODO: bottom-bar directive refactor to use here -->
         <div class="btns-wrapper col-xs-12 text-center" 

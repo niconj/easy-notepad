@@ -4,14 +4,14 @@ export class SettingsController {
 
         let st = this;
 
+        init();
+
         st.goHome = () => {
             $location.path('/');
         };
 
         st.setThemeColor = () => Theme.setThemeColor(st.themeColor);
         st.setLang = () => Language.setLang(st.lang);
-
-        init();
 
         function init() {
             st.themeColor = Theme.theme;
